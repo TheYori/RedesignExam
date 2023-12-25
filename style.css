@@ -1,0 +1,162 @@
+@charset "utf-8";
+/* CSS Document */
+
+html{
+	height: 100%;
+}
+
+body{ /*Background setup. Such as colours & height of site*/
+	margin: 0;
+	padding: 0;
+	background: rgb(190,50,237);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	
+}
+
+* {
+    margin: 0; 
+    padding: 0; 
+    font-family: "montserrat", "sans-serif"; 
+}
+
+/*Nav-bar setup for both PC and Mobile*/
+.top-bar {
+    
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    padding: 15px; 
+    height: 100px;
+	
+}
+
+.menu {
+    display: flex; 
+    list-style-type: none;
+	color: #00CFB6;
+}
+
+li {
+    padding: 20px;
+	margin-right: 100px;
+    overflow: hidden;
+	color: #00CFB6;
+}
+
+a:link{
+	text-decoration: none;
+	color: #00CFB6;
+}
+
+a:hover{
+	text-decoration: none;
+	color:rgba(228,12,15,1.00);
+}
+
+.box {
+    height: 100%;
+    width: 30px; 
+    cursor: pointer;
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center; 
+}
+
+.icon, .icon::before, .icon::after {
+    display: block; 
+    background: white; 
+    height: 4px; 
+    width: 30px; 
+    border-radius: 2px; 
+    /*position: absolute;*/ 
+    transition: transform 400ms; 
+}
+
+.icon::before {
+    content: ""; 
+    margin-top: -8px;  
+}
+
+.icon::after {
+    content: ""; 
+    margin-top: 8px;  
+}
+
+#activate:checked + .box .icon::before {
+    margin-top: 0; 
+    transform: rotate(405deg); 
+}
+
+#activate:checked + .box .icon::after {
+    margin-top: 0; 
+    transform: rotate(-405deg); 
+}
+
+#activate:checked + .box .icon {
+    background: rgba(150,0,4,0);
+}
+
+#activate {
+    display: none; 
+}
+
+.box {
+    display: none; 
+}
+
+/*Nav-bar setup for both PC and Mobile*/
+@media screen and (max-width: 900px) {
+    .box {
+        display: flex; 
+    }
+    
+    .menu {
+        position: absolute;
+        top: 0; 
+        left: 0; 
+        margin-top: 115px; 
+        flex-direction: column; 
+        width: 100%;
+        justify-content: center; 
+        align-items: center; 
+    }
+    
+    .menu li {
+        background: rgba(84,22,105,1); 
+        width: 900px;
+        display: flex; 
+        justify-content: center; 
+    }
+    
+    #activate ~ .menu li {
+        height: 0; 
+        margin: 0; 
+        padding: 0; 
+        border: 0; 
+        transition: height 400ms; 
+    }
+    
+    #activate:checked ~ .menu li {
+        transition: height 400ms; 
+        height: 45px;  
+        padding: 15px; 
+    }
+}
+
+.navbar {
+	align-items: center; 
+}
+
+.middle-left {
+	align-items: center; 
+}
+
+.middle-top {
+	align-items: center; 
+}
+
+.middle-right {
+	align-items: center; 
+}
