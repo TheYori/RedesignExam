@@ -20,14 +20,46 @@ body{ /*Background setup. Such as colours & height of site*/
     font-family: "montserrat", "sans-serif"; 
 }
 
+.item1 { grid-area: empty1; }
+.item2 { grid-area: header; }
+.item3 { grid-area: empty2; }
+.item4 { grid-area: art1; }
+.item5 { grid-area: main; }
+.item6 { grid-area: art2; }
+.item7 { grid-area: empty3; }
+.item8 { grid-area: footer; }
+.item9 { grid-area: empty4; }
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'empty1 empty1 header header empty2 empty2'
+    'art1 art1  main main art2 art2'
+    'empty3 empty3 footer footer empty4 empty4';
+  gap: 10px;
+  padding: 10px;
+align-content: center;
+}
+
+section{
+	
+}
+
 /*Nav-bar setup for both PC and Mobile*/
-.top-bar {
+#nav-bar {
     
-    display: flex; 
     align-items: center; 
     justify-content: space-between; 
     padding: 15px; 
     height: 100px;
+	align-content: center;
+	background: rgba(68,42,42,1.00);
+	text-align: center;
+}
+
+.item2{
+	text-align: center;
+
 	
 }
 
@@ -35,18 +67,27 @@ body{ /*Background setup. Such as colours & height of site*/
     display: flex; 
     list-style-type: none;
 	color: #00CFB6;
+	margin-left: auto;
+    margin-right: auto;
+	align-content: center;
+	text-align: center;
+	align-items: center;
 }
 
 li {
     padding: 20px;
-	margin-right: 100px;
     overflow: hidden;
 	color: #00CFB6;
-}
+	text-align: center;
+	font-size: 12px;
+	width: 100px;
+	}
 
 a:link{
 	text-decoration: none;
 	color: #00CFB6;
+	
+	
 }
 
 a:hover{
@@ -70,7 +111,7 @@ a:hover{
     height: 4px; 
     width: 30px; 
     border-radius: 2px; 
-    /*position: absolute;*/ 
+    position: absolute; 
     transition: transform 400ms; 
 }
 
@@ -107,8 +148,20 @@ a:hover{
 }
 
 /*Nav-bar setup for both PC and Mobile*/
-@media screen and (max-width: 900px) {
-    .box {
+@media screen and ( max-width : 900px ){
+    .grid-container {
+  		display: grid;
+ 		grid-template-areas:
+   		 'header header header header header header'
+   		 'main main main main main main'
+  		 'footer footer footer footer footer footer';
+ 		gap: 10px;
+  		padding: 10px;
+		align-content: center;
+		align-items: center;
+}
+	
+	.box {
         display: flex; 
     }
     
@@ -145,18 +198,43 @@ a:hover{
     }
 }
 
-.navbar {
-	align-items: center; 
+/* Create three equal columns that floats next to each other */
+/*---style for containers (all css elements is the exact same, but made seperate in case of independent design in each)---*/
+.rows {  /*---Flex containers---*/
+	display: flex;
+	flex-wrap: wrap;
+	align-items: stretch;
+	margin-top: 200px;
+	margin-bottom: 100px;
 }
 
-.middle-left {
-	align-items: center; 
+.rows > div{ /*---Flex containers 
+	(Centers the text in each container)---*/
+  text-align: center;
+	flex-grow: 1;
 }
 
-.middle-top {
-	align-items: center; 
+
+/*---style for containers (all css elements is the exact same, but made seperate in case of independent design in each)---*/
+
+
+.category-text{ /*---TEXT styles---*/
+	color: #69D4C7;
+	margin-top: 10px;
+	font-size: 30px;
+	text-align: center;
 }
 
-.middle-right {
-	align-items: center; 
+.category-footer{ /*---coloured line under text---*/
+	background-color: #945390;
+	padding: 5px;
+	margin-left: 180px;
+	margin-right: 180px;
+	margin-bottom: 100px;
+	margin-top: 5px;
+	border-radius: 50px;
+	mix-blend-mode: color-burn;
 }
+
+
+
