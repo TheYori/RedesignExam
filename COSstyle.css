@@ -14,78 +14,44 @@ body{ /*Background setup. Such as colours & height of site*/
 	
 }
 
-* {
+/*Changes for the site itself. Anything written here can have an effect on the whole site. */
+* { 
     margin: 0; 
     padding: 0; 
     font-family: "montserrat", "sans-serif"; 
 }
 
-.item1 { grid-area: empty1; display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 2px solid black;}
-.item2 { grid-area: header; display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 2px solid black;}
-.item3 { grid-area: empty2; display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 2px solid black;
-  
-    padding: 15px; 
-    height: 100px;
-}
-.item4 { grid-area: art1; display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 2px solid black;}
-.item5 { grid-area: main; display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 2px solid black;}
-.item6 { grid-area: art2; display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 2px solid black;}
-.item7 { grid-area: empty3; display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 2px solid black;}
-.item8 { grid-area: footer; display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 2px solid black;}
-.item9 { grid-area: empty4; display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 2px solid black;}
-
 .grid-container {
-  display: grid;
-  grid-template-areas:
+	display: grid;
+	grid-template-areas:
     'empty1 empty1 header header empty2 empty2'
+	'empty3 empty3 nav nav empty4 empty4'
+	'empty5 empty5 news news empty6 empty6'
     'art1 art1  main main art2 art2'
-    'empty3 empty3 footer footer empty4 empty4';
-  gap: 10px;
-  padding: 10px;
-align-content: center;
+    'empty7 empty7 footer footer empty8 empty8';
+	gap: 10px;
+	padding: 10px;
+	align-content: center;
 }
 
-.top-bar {
-    
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-    padding: 15px; 
-    height: 100px;
-	
+/* HEADER - Logo & name of website */
+.header { grid-area: header; display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;}
+
+/* NAVIGATION BAR - Grid + Nav for all large pages on the site  */
+.top-bar { 
+	grid-area: nav; display: flex;
+	justify-content: center;
+	align-items: center;
+	border: 2px solid black;
+	background: rgba(39,39,39,1.00);
 }
 
 .menu {
     display: flex; 
     list-style-type: none;
-	color: #00CFB6;
 	justify-content: center;
 	align-content: center;
 	
@@ -93,9 +59,8 @@ align-content: center;
 
 li {
     padding: 20px;
-	margin-right: 100px;
     overflow: hidden;
-	color: #00CFB6;
+	color: rgba(255,255,255,1.00);
 	justify-content: center;
 }
 .a{ 
@@ -165,31 +130,91 @@ a:hover{
     display: none; 
 }
 
+/* NEWS BAR - Grid + where the Bort & the latest news is displayed  */
+.news { 
+	grid-area: news;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+	background: rgba(64,64,64,1.00);
+	height: 200px;
+
+}
+
+/* CONTENT GRID - Banner, content header & content text  */
+.main { 
+	grid-area: main; 
+	justify-content: center;
+	align-items: center;
+	border: 2px solid black;
+}
+
+.content-banner{
+	
+}
+
+.content-text{
+	
+}
+
+/* FOOTER - All footer content  */
+.footer { 
+	grid-area: footer; 
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: 2px solid black;
+}
+
+/* GRID EMPTIES */
+.empty1 { grid-area: empty1; display: flex; justify-content: center; align-items: center; border: 2px solid black;}
+.empty2 { grid-area: empty2; display: flex; justify-content: center; align-items: center; border: 2px solid black;}
+.empty3 { grid-area: empty3; display: flex; justify-content: center; align-items: center; border: 2px solid black;}
+.empty4 { grid-area: empty4; display: flex; justify-content: center; align-items: center; border: 2px solid black;}
+.empty5 { grid-area: empty5; display: flex; justify-content: center; align-items: center; border: 2px solid black;}
+.empty6 { grid-area: empty6; display: flex; justify-content: center; align-items: center; border: 2px solid black;}
+.empty7 { grid-area: empty7; display: flex; justify-content: center; align-items: center; border: 2px solid black;}
+.empty8 { grid-area: empty8; display: flex; justify-content: center; align-items: center; border: 2px solid black;}
+
+.art1 { grid-area: art1; display: flex; justify-content: center; align-items: center; border: 2px solid black;}
+.art2 { grid-area: art2; display: flex; justify-content: center; align-items: center; border: 2px solid black;}
+
+
+
+
+
+
+
+
+
+
+
+
 /*Nav-bar setup for both PC and Mobile*/
 @media screen and ( max-width : 900px ){
     .grid-container {
   		display: grid;
  		grid-template-areas:
-   		 'header header header header header header'
-   		 'main main main main main main'
-  		 'footer footer footer footer footer footer';
+			'nav nav nav nav nav nav'
+    		'header header header header header header'
+			'news news news news news news'
+    		'main main  main main main main'
+   			'footer footer footer footer footer footer';
  		gap: 10px;
   		padding: 10px;
 		align-content: center;
 		align-items: center;
 }
-	.item1 { 
-	display: none;}
-	.item3 { 
-	display: none;}
-	.item4 { 
-	display: none;}
-	.item6 { 
-	display: none;}
-	.item7 { 
-	display: none;}
-	.item9 { 
-	display: none;}
+	.empty1 { display: none;}
+	.empty2 { display: none;}
+	.empty3 { display: none;}
+	.empty4 { display: none;}
+	.empty5 { display: none;}
+	.empty6 { display: none;}
+	.empty7 { display: none;}
+	.empty8 { display: none;}
+	.art1 { display: none;}
+	.art2 { display: none;}
 	
 	.box {
         display: flex; 
