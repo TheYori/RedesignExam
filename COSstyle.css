@@ -8,7 +8,8 @@ html{
 body{ /*Background setup. Such as colours & height of site*/
 	margin: 0;
 	padding: 0;
-	background: rgb(190,50,237);
+	background: rgb(0,0,0);
+	background: radial-gradient(circle, rgba(0,0,0,1) 50%, rgba(51,51,51,1) 80%, rgba(102,102,102,1) 90%, rgba(153,153,153,1) 100%);
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	
@@ -23,12 +24,14 @@ body{ /*Background setup. Such as colours & height of site*/
 
 .grid-container {
 	display: grid;
+	grid-template-columns: 10% 10% 28% 28% 10% 10%;
 	grid-template-areas:
     'empty1 empty1 header header empty2 empty2'
 	'empty3 empty3 nav nav empty4 empty4'
 	'empty5 empty5 news news empty6 empty6'
     'art1 art1  main main art2 art2'
     'empty7 empty7 footer footer empty8 empty8';
+	justify-content: center;
 	gap: 10px;
 	padding: 10px;
 	align-content: center;
@@ -40,12 +43,13 @@ body{ /*Background setup. Such as colours & height of site*/
   align-items: center;
   border: 2px solid black;}
 
+
 /* NAVIGATION BAR - Grid + Nav for all large pages on the site  */
 .top-bar { 
-	grid-area: nav; display: flex;
+	grid-area: nav; 
+	display: flex;
 	justify-content: center;
 	align-items: center;
-	border: 2px solid black;
 	background: rgba(39,39,39,1.00);
 }
 
@@ -62,9 +66,7 @@ li {
     overflow: hidden;
 	color: rgba(255,255,255,1.00);
 	justify-content: center;
-}
-.a{ 
-justify-content: space-between;
+	font-size: 10px;
 }
 
 a:link{
@@ -133,12 +135,54 @@ a:hover{
 /* NEWS BAR - Grid + where the Bort & the latest news is displayed  */
 .news { 
 	grid-area: news;
-  justify-content: center;
-  align-items: center;
-  border: 2px solid black;
+  	justify-content: center;
+  	align-items: center;
 	background: rgba(64,64,64,1.00);
-	height: 200px;
+	padding: 10px 10px 0px 10px; /*top, right, bottom, left*/
+}
 
+.news-header{
+	display: flex;
+	
+	align-content: center;
+	align-items: center;
+	justify-content: center;
+}
+
+.news-header img{
+	width: 320px;
+}
+
+.news-header h2{
+	color: aliceblue;
+	font-size: 25px;
+	width: 400px;
+	text-align: center;
+	justify-content: center;
+}
+
+.news-content{
+	display: flex;
+	padding: 10px 0px 10px 0px; /*top, right, bottom, left*/
+	
+}
+
+.news-content img{
+	width: 75px;
+}
+
+.news-text{
+	padding-left: 20px;
+	color:aliceblue;
+}
+
+.news-text h3{
+	font-size: 20px;
+}
+
+.news-text p{
+	padding-top: 10px;
+	font-size: 15px;
 }
 
 /* CONTENT GRID - Banner, content header & content text  */
@@ -146,46 +190,105 @@ a:hover{
 	grid-area: main; 
 	justify-content: center;
 	align-items: center;
-	border: 2px solid black;
 }
 
-.content-banner{
+.main img{
+	
+	width: 100%;
+}
+
+.scripture{
+	padding: 40px;
+	height: 600px;
+	background:rgba(220,220,220,1.00);
+}
+
+.chapter-start{display: flex;}
+.chapter-start img{width: 50px;}
+.content-text{padding-left: 40px;}
+.content-text p{padding-top: 10;}
+.content-text h1{font-weight: 400;}
+
+.text{padding-top: 20px;}
+
+.text p{
+	
+	margin-bottom: 10px;
+	word-spacing: 2px;
+	line-height: 1.2;
 	
 }
 
-.content-text{
-	
+.text a{
+	text-decoration: underline;
+	color: black;
 }
 
 /* FOOTER - All footer content  */
 .footer { 
 	grid-area: footer; 
-	display: flex;
 	justify-content: center;
 	align-items: center;
-	border: 2px solid black;
+}
+
+.footer p{
+	color: aliceblue;
+	text-align: center;
+	margin-top: -210px;
+	padding-bottom: 20px;
+	font-size: 14px;
+}
+
+.footer img{
+	width: 100%;
+}
+
+.footer-icons{
+	display: flex;
+	justify-content: center;
+}
+	
+
+.footer-icons img{
+	width: 50px;
+	padding: 0px 15px;
 }
 
 /* GRID EMPTIES */
-.empty1 { grid-area: empty1; display: flex; justify-content: center; align-items: center; border: 2px solid black;}
-.empty2 { grid-area: empty2; display: flex; justify-content: center; align-items: center; border: 2px solid black;}
-.empty3 { grid-area: empty3; display: flex; justify-content: center; align-items: center; border: 2px solid black;}
-.empty4 { grid-area: empty4; display: flex; justify-content: center; align-items: center; border: 2px solid black;}
-.empty5 { grid-area: empty5; display: flex; justify-content: center; align-items: center; border: 2px solid black;}
-.empty6 { grid-area: empty6; display: flex; justify-content: center; align-items: center; border: 2px solid black;}
-.empty7 { grid-area: empty7; display: flex; justify-content: center; align-items: center; border: 2px solid black;}
-.empty8 { grid-area: empty8; display: flex; justify-content: center; align-items: center; border: 2px solid black;}
+.empty1 { grid-area: empty1; display: flex; justify-content: center; align-items: center;}
+.empty2 { grid-area: empty2; display: flex; justify-content: center; align-items: center;}
+.empty3 { grid-area: empty3; display: flex; justify-content: center; align-items: center;}
+.empty4 { grid-area: empty4; display: flex; justify-content: center; align-items: center;}
+.empty5 { grid-area: empty5; display: flex; justify-content: center; align-items: center;}
+.empty6 { grid-area: empty6; display: flex; justify-content: center; align-items: center;}
+.empty7 { grid-area: empty7; display: flex; justify-content: center; align-items: center;}
+.empty8 { grid-area: empty8; display: flex; justify-content: center; align-items: center;}
 
-.art1 { grid-area: art1; display: flex; justify-content: center; align-items: center; border: 2px solid black;}
-.art2 { grid-area: art2; display: flex; justify-content: center; align-items: center; border: 2px solid black;}
+.art1 { 
+grid-area: art1; 
+align-items: center; 
+justify-content: center;
+align-content: center;
+display: flex;
+height: 1080px;
+}
 
+.art1 img{
+	width: 50%;
+}
 
+.art2 { 
+grid-area: art2; 
+align-items: center; 
+justify-content: center;
+align-content: center;
+display: flex;
+height: 1080px;
+}
 
-
-
-
-
-
+.art2 img{
+	width: 50%;
+}
 
 
 
