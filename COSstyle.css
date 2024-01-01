@@ -19,7 +19,8 @@ body{ /*Background setup. Such as colours & height of site*/
 * { 
     margin: 0; 
     padding: 0; 
-    font-family: "montserrat", "sans-serif"; 
+    /*font-family: "montserrat", "sans-serif"; */
+	font-family: 'Allerta';
 }
 
 .grid-container {
