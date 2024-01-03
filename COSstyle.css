@@ -150,7 +150,9 @@ a:hover{
 }
 
 .news-header img{
-	width: 320px;
+	width: 350px;
+	padding-left: 20px;
+	padding-right: 20px;
 }
 
 .news-header h2{
@@ -167,10 +169,10 @@ a:hover{
 	
 }
 
-.news-content img{width: 75px;}
+.news-content img{width: 75px; padding-left: 20px;}
 .news-text{padding-left: 20px; color:aliceblue;}
-.news-text h3{font-size: 20px;}
-.news-text p{padding-top: 10px; font-size: 15px;}
+.news-text h3{font-size: 20px; padding-right: 20px;}
+.news-text p{padding-top: 10px; font-size: 15px; padding-right: 20px;}
 
 /* CONTENT GRID - Banner, content header & content text  */
 .main { 
